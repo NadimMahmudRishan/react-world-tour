@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  border: 2px rgba(28, 68, 83, 0.425);
+  border-radius: 15px;
+  background: #48acca9c;
+  padding: 20px;
+  margin: 20px;
+}
+button{
+    padding: 10px 20px;
+    border-radius: 5px;
+}
