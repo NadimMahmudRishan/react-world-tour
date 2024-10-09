@@ -7,3 +7,6 @@
   border-radius: 15px;
   box-shadow: 5px 5px 10px;
 }
+.visited{
+  background-color: rgba(125, 255, 125, 0.562);
+}
