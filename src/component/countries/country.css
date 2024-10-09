@@ -1,0 +1,14 @@
+.outerBox {
+  border: 2px rgb(160, 228, 255);
+  border-radius: 15px;
+  background: #48acca9c;
+  padding: 20px;
+  margin: 20px;
+}
+.innerBox {
+  border: 2px plum;
+  background: #9e7bffbe;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 15px;
+}
