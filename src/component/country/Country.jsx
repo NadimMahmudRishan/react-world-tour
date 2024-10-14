@@ -7,6 +7,9 @@ const Country = ({ country }) => {
   const handelVisited = () => {
     setVisited(!visited);
   };
+  const visitedPreams = () => {
+    handelVisited(country);
+  }
   return (
     <div className={`Box ${visited && "visited"}`}>
       <h4>Country Name : {name?.common}</h4>
@@ -16,7 +19,7 @@ const Country = ({ country }) => {
       <p>
         <small>CCA3 Code : {cca3}</small>
       </p>
-      <button onClick={handelVisited}>
+      <button onClick={visitedPreams}>
         {visited ? "Visited" : "Wanna Go"}
       </button>
       {visited
