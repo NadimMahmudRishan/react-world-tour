@@ -10,16 +10,36 @@ const Countries = () => {
       .then((data) => setContries(data));
   }, []);
 
-  const VisitedFlag=()=>{
-    const [visitedFlag, setVisitedFlag]=useState([]);
-  }
+  const [visitedFlag, setVisitedFlag] = useState([]);
+  const handelVisitedFlag = (country) => {
+    console.log(country);
+    const NewVisitedFlag = [...visitedFlag, country];
+    setVisitedFlag(NewVisitedFlag);
+  };
   return (
     <>
-    <h2>Visited Countries : {}</h2>
+      <h2>Visited Countries : {visitedFlag.length}</h2>
+
+      <ul>
+        {visitedFlag.map((country) => (
+          <div>
+            <div>
+              {country.name.common}
+              <br />
+              <img src={country.flags.png} alt="" />
+            </div>
+          </div>
+        ))}
+      </ul>
+
       <h2>Total Contries : {contries.length}</h2>
       <div className="container">
         {contries.map((country) => (
-          <Country key={country.car.cca3} country={country}></Country>
+          <Country
+            key={country.car.cca3}
+            country={country}
+            handelVisitedFlag={handelVisitedFlag}
+          ></Country>
         ))}
       </div>
     </>

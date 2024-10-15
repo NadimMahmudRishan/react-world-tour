@@ -1,15 +1,13 @@
 import { useState } from "react";
 import "./country.css";
 
-const Country = ({ country }) => {
+const Country = ({ country, handelVisitedFlag }) => {
   const { name, flags, population, area, cca3 } = country;
   const [visited, setVisited] = useState(false);
-  const handelVisited = () => {
+  const handelVisited = (country) => {
     setVisited(!visited);
+    handelVisitedFlag(country);
   };
-  const visitedPreams = () => {
-    handelVisited(country);
-  }
   return (
     <div className={`Box ${visited && "visited"}`}>
       <h4>Country Name : {name?.common}</h4>
@@ -19,7 +17,7 @@ const Country = ({ country }) => {
       <p>
         <small>CCA3 Code : {cca3}</small>
       </p>
-      <button onClick={visitedPreams}>
+      <button onClick={() => handelVisited(country)}>
         {visited ? "Visited" : "Wanna Go"}
       </button>
       {visited
